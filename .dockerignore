@@ -1,0 +1,15 @@
+.git
+.venv
+.pytest_cache
+.ruff_cache
+__pycache__
+data
+demo
+docs
+screenshots
+tests
+tools
+scripts
+fixtures
+*.md
+!README.md

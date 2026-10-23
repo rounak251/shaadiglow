@@ -1,0 +1,21 @@
+# Render Blueprint: one free Docker web service.  Render > New > Blueprint > pick this repo.
+services:
+  - type: web
+    name: shaadiglow
+    runtime: docker
+    plan: free
+    region: singapore            # closest Render region to India
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: YOUCAM_API_KEY      # secret: Render asks for the value on first deploy; never commit it
+        sync: false
+      - key: YOUCAM_REGION       # india = yce-api-01.makeupar.com (key from yce.makeupar.com)
+        value: india
+      - key: SG_RESERVE_UNITS    # live calls stop when the account balance would drop below this
+        value: "60"
+      - key: SG_CLIENT_DAILY_UNITS   # per-visitor (IP) daily unit cap for judges' own photos
+        value: "60"
+      - key: SG_ALLOW_LIVE_UPLOADS
+        value: "true"
