@@ -1,0 +1,15 @@
+{
+ "_source": "YouCam API docs (docs.perfectcorp.com, v1.16), copied verbatim; read 2026-10-23 \u00b7 GET /s2s/v1.0/client/credit schema examples",
+ "body": {
+  "status": 200,
+  "results": [
+   {
+    "id": 13105541279084536,
+    "type": "ApiPaygToken",
+    "amount": 10,
+    "amount_dec": 10.04,
+    "expiry": 1704789135000
+   }
+  ]
+ }
+}

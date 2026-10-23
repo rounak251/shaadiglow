@@ -1,0 +1,11 @@
+{
+ "_source": "YouCam API docs (docs.perfectcorp.com, v1.16), copied verbatim; read 2026-10-23 \u00b7 AI Makeup VTO guide",
+ "body": {
+  "status": 200,
+  "data": {
+   "task_status": "error",
+   "error": "exceed_max_filesize",
+   "error_message": "string"
+  }
+ }
+}

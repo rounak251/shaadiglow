@@ -1,0 +1,8 @@
+{
+ "_source": "YouCam API docs (docs.perfectcorp.com, v1.16), copied verbatim; read 2026-10-23 \u00b7 AI Makeup VTO guide",
+ "body": {
+  "status": 400,
+  "error": "The operation could not be completed",
+  "error_code": "CreditInsufficiency"
+ }
+}

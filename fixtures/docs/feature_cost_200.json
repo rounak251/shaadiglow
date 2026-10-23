@@ -1,0 +1,25 @@
+{
+ "_source": "YouCam API docs (docs.perfectcorp.com, v1.16), copied verbatim; read 2026-10-23 \u00b7 GET /s2s/v2.0/credit/feature-cost example",
+ "body": {
+  "status": 200,
+  "result": {
+   "next_token": "MjA",
+   "skus": [
+    {
+     "description": "AI Skin Analysis for SD 1~4 concerns",
+     "amount": 9,
+     "unit": "result_image",
+     "proc_unit": 1,
+     "run_task_url": "https://yce-api-01.makeupar.com/s2s/v2.0/task/skin-analysis"
+    },
+    {
+     "description": "AI Skin Analysis for SD 5~7 concerns",
+     "amount": 12,
+     "unit": "result_image",
+     "proc_unit": 1,
+     "run_task_url": "https://yce-api-01.makeupar.com/s2s/v2.0/task/skin-analysis"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "_source": "YouCam API docs (docs.perfectcorp.com, v1.16), copied verbatim; read 2026-10-23 \u00b7 AI Skin Analysis debugging guide",
+ "body": {
+  "status": 400,
+  "error": "cannot mix HD and SD dst_actions",
+  "error_code": "InvalidParameters"
+ }
+}
