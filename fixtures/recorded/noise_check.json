@@ -1,0 +1,22 @@
+{
+ "scores": [
+  {
+   "pore": 69,
+   "dark_circle_v2": 76,
+   "acne": 89,
+   "oiliness": 79
+  },
+  {
+   "pore": 69,
+   "oiliness": 78,
+   "dark_circle_v2": 76,
+   "acne": 90
+  }
+ ],
+ "abs_diff": {
+  "pore": 0,
+  "dark_circle_v2": 0,
+  "acne": 1,
+  "oiliness": 1
+ }
+}

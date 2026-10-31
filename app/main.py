@@ -130,7 +130,7 @@ async def config(request: Request):
     s = request.app.state.settings
     return {"version": VERSION, **s.public(), "today": today_ist().isoformat(), "costs": cost_table(),
             "apis": {k: {"title": f.title, "doc": f.doc_url} for k, f in FEATURES.items()},
-            "personas": public_list(), "cities": climate.city_list(), "full_scan": FULL_SCAN,
+            "personas": public_list(live=s.mode == "live"), "cities": climate.city_list(), "full_scan": FULL_SCAN,
             "budgets": catalog.TIERS, "units": svc(request).units()}
 
 

@@ -1,0 +1,10 @@
+{
+ "status": 200,
+ "data": {
+  "error": null,
+  "results": {
+   "url": "https://yce-us.s3-accelerate.amazonaws.com/ttl30/519529175795641368/123865863417/v2/aeMNNB0KmUIP8rnQ996tC5Q/05bb46df-e6a8-412e-83ba-a298e2de169a.jpg?<signature-redacted>"
+  },
+  "task_status": "success"
+ }
+}

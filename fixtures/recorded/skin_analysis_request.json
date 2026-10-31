@@ -1,0 +1,13 @@
+{
+ "src_file_id": "<file_id>",
+ "dst_actions": [
+  "acne",
+  "pore",
+  "oiliness",
+  "skin_type"
+ ],
+ "miniserver_args": {
+  "enable_mask_overlay": false
+ },
+ "format": "json"
+}

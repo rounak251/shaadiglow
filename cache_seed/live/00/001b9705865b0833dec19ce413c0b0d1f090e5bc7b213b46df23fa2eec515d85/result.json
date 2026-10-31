@@ -1,0 +1,22 @@
+{
+ "feature": "beard_style",
+ "api": "AI Beard Style Generator",
+ "task_id": "vydYZ60HbIYglDdQz7a2FIkihjMwlApIw4eEpHNhy3PgjkFSxxF9xNMHJd8IOdIJGb81HLK0wBtEhzB9wwg7RQ",
+ "units": 2,
+ "mode": "live",
+ "elapsed_s": 4.66,
+ "polls": 3,
+ "calls": [
+  "POST /s2s/v2.0/task/beard-style -> 200",
+  "GET /s2s/v2.0/task/beard-style/vydYZ60HbIYglDdQz7a2FIkihjMwlApIw4eEpHNhy3PgjkFSxxF9xNMHJd8IOdIJGb81HLK0wBtEhzB9wwg7RQ -> 200",
+  "GET /s2s/v2.0/task/beard-style/vydYZ60HbIYglDdQz7a2FIkihjMwlApIw4eEpHNhy3PgjkFSxxF9xNMHJd8IOdIJGb81HLK0wBtEhzB9wwg7RQ -> 200",
+  "GET /s2s/v2.0/task/beard-style/vydYZ60HbIYglDdQz7a2FIkihjMwlApIw4eEpHNhy3PgjkFSxxF9xNMHJd8IOdIJGb81HLK0wBtEhzB9wwg7RQ -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "template_id": "all_circle"
+ },
+ "result": "result.jpg",
+ "cache_key": "001b9705865b0833dec19ce413c0b0d1f090e5bc7b213b46df23fa2eec515d85",
+ "stored_at": 1793459871
+}

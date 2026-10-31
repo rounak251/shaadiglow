@@ -1,0 +1,86 @@
+{
+ "feature": "skin_analysis",
+ "api": "AI Skin Analysis",
+ "task_id": "mZBuCtyMBfoSjyhlT-cZyDGB4NUqw_SeJLYtw4h3qFT9gq0i4yUD9fPlLPN7cuSTV8vjSsGp_00cofvLX8kY0w",
+ "units": 9,
+ "mode": "live",
+ "elapsed_s": 4.54,
+ "polls": 2,
+ "calls": [
+  "POST /s2s/v2.1/task/skin-analysis -> 200",
+  "GET /s2s/v2.1/task/skin-analysis/mZBuCtyMBfoSjyhlT-cZyDGB4NUqw_SeJLYtw4h3qFT9gq0i4yUD9fPlLPN7cuSTV8vjSsGp_00cofvLX8kY0w -> 200",
+  "GET /s2s/v2.1/task/skin-analysis/mZBuCtyMBfoSjyhlT-cZyDGB4NUqw_SeJLYtw4h3qFT9gq0i4yUD9fPlLPN7cuSTV8vjSsGp_00cofvLX8kY0w -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "dst_actions": [
+   "pore",
+   "moisture",
+   "eye_bag",
+   "dark_circle_v2"
+  ],
+  "miniserver_args": {
+   "enable_mask_overlay": false
+  },
+  "format": "json"
+ },
+ "results": {
+  "output": [
+   {
+    "ui_score": 66,
+    "mask_urls": [
+     "m0_0.png"
+    ],
+    "raw_score": 45.8355188369751,
+    "type": "eye_bag",
+    "url": null
+   },
+   {
+    "ui_score": 73,
+    "mask_urls": [
+     "m1_0.png"
+    ],
+    "raw_score": 62.73550510406494,
+    "type": "pore",
+    "url": null
+   },
+   {
+    "ui_score": 70,
+    "mask_urls": [
+     "m2_0.png"
+    ],
+    "raw_score": 63.75875771045685,
+    "type": "dark_circle_v2",
+    "url": null
+   },
+   {
+    "ui_score": 72,
+    "mask_urls": [
+     "m3_0.png"
+    ],
+    "raw_score": 55.9424102306366,
+    "type": "moisture",
+    "url": null
+   },
+   {
+    "score": 70.25,
+    "type": "all",
+    "url": null
+   },
+   {
+    "score": 31,
+    "type": "skin_age",
+    "url": null
+   },
+   {
+    "mask_urls": [
+     "m6_0.jpg"
+    ],
+    "type": "resize_image",
+    "url": null
+   }
+  ]
+ },
+ "cache_key": "c8a08f30951aad966cd6bd03a659180eaf03b8c73c24f1e6effa6fcc3612308a",
+ "stored_at": 1793459814
+}

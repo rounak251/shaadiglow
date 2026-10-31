@@ -1,0 +1,49 @@
+{
+ "before": 1000.0,
+ "after": 1022.0,
+ "spent": -22.0,
+ "per_feature": [
+  {
+   "feature": "skin_analysis",
+   "documented": 9,
+   "charged": 9.0,
+   "note": "5.3s/2 polls"
+  },
+  {
+   "feature": "skin_simulation",
+   "documented": 4,
+   "charged": 4.0,
+   "note": "11.9s/4 polls"
+  },
+  {
+   "feature": "makeup_vto",
+   "documented": 1,
+   "charged": 1.0,
+   "note": "8.9s/3 polls"
+  },
+  {
+   "feature": "hair_color",
+   "documented": 1,
+   "charged": 1.0,
+   "note": "29.2s/8 polls"
+  },
+  {
+   "feature": "earring",
+   "documented": 1,
+   "charged": null,
+   "note": "failed"
+  },
+  {
+   "feature": "necklace",
+   "documented": 1,
+   "charged": 1.0,
+   "note": "8.2s/3 polls"
+  },
+  {
+   "feature": "beard_style",
+   "documented": 2,
+   "charged": 2.0,
+   "note": "5.3s/2 polls"
+  }
+ ]
+}

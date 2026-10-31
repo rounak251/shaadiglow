@@ -32,7 +32,8 @@ PERSONAS = {
         "scores": {"acne": 69, "pore": 61, "texture": 69, "oiliness": 61, "moisture": 73, "redness": 77,
                    "age_spot": 73, "dark_circle_v2": 63, "eye_bag": 71, "radiance": 67, "wrinkle": 89},
     },
-    "meera": {
+    "meera": {   # demo mode only: live Skin Analysis rejects this photo (error_large_face_angle, 31 Oct 2026)
+        "demo_only": True,
         "name": "Meera", "role": "guest", "age": 24, "city": "jaipur", "wedding_in_days": 21,
         "blurb": {"en": "Bride's sister · Jaipur · sangeet in 3 weeks", "hi": "दुल्हन की बहन · जयपुर · संगीत 3 हफ़्ते में"},
         "credit": "Himanshu Dewangan / Unsplash", "skin_age": 24, "skin_type": ["Normal", "Combination", "Dry"],
@@ -64,8 +65,8 @@ def variant_bytes(pid: str, variant: str) -> bytes:
     return (PERSONA_DIR / pid / f"{variant}.jpg").read_bytes()
 
 
-def public_list() -> list[dict]:
+def public_list(live: bool = False) -> list[dict]:
     return [{"id": pid, "name": p["name"], "role": p["role"], "blurb": p["blurb"], "credit": p["credit"],
              "city": p["city"], "wedding_in_days": p["wedding_in_days"],
              "image": f"/static/personas/{pid}/face.jpg", "portrait": f"/static/personas/{pid}/portrait.jpg"}
-            for pid, p in PERSONAS.items() if not p.get("hidden")]
+            for pid, p in PERSONAS.items() if not p.get("hidden") and not (live and p.get("demo_only"))]

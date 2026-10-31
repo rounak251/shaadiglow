@@ -1,0 +1,23 @@
+{
+ "feature": "hair_color",
+ "api": "AI Hair Color Virtual Try-On",
+ "task_id": "1gO1_qDJ9VVGdOH-kn1sNo2QE4lLH-eXI21uFPi5lRbnqNTbuFqtXmznRn3pqIcVDtzZw-qXapKUf8ErhvArwA",
+ "units": 1,
+ "mode": "live",
+ "elapsed_s": 9.79,
+ "polls": 4,
+ "calls": [
+  "POST /s2s/v2.0/task/hair-color -> 200",
+  "GET /s2s/v2.0/task/hair-color/1gO1_qDJ9VVGdOH-kn1sNo2QE4lLH-eXI21uFPi5lRbnqNTbuFqtXmznRn3pqIcVDtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/1gO1_qDJ9VVGdOH-kn1sNo2QE4lLH-eXI21uFPi5lRbnqNTbuFqtXmznRn3pqIcVDtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/1gO1_qDJ9VVGdOH-kn1sNo2QE4lLH-eXI21uFPi5lRbnqNTbuFqtXmznRn3pqIcVDtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/1gO1_qDJ9VVGdOH-kn1sNo2QE4lLH-eXI21uFPi5lRbnqNTbuFqtXmznRn3pqIcVDtzZw-qXapKUf8ErhvArwA -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "preset": "Jet Black"
+ },
+ "result": "result.jpg",
+ "cache_key": "a12fb5c65dd330852a51ac5420b47d69a9b5f346115a8a4e54a23d68b1505704",
+ "stored_at": 1793459848
+}

@@ -1,0 +1,133 @@
+{
+ "feature": "makeup_vto",
+ "api": "AI Makeup Virtual Try-On",
+ "task_id": "j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYxj8SCxCtTGcoiwc_QQ-RqBd-BTT-LvvMAmKHuvXEbI5Q",
+ "units": 1,
+ "mode": "live",
+ "elapsed_s": 7.52,
+ "polls": 4,
+ "calls": [
+  "POST /s2s/v2.0/task/makeup-vto -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYxj8SCxCtTGcoiwc_QQ-RqBd-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYxj8SCxCtTGcoiwc_QQ-RqBd-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYxj8SCxCtTGcoiwc_QQ-RqBd-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYxj8SCxCtTGcoiwc_QQ-RqBd-BTT-LvvMAmKHuvXEbI5Q -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "effects": [
+   {
+    "category": "skin_smooth",
+    "skinSmoothStrength": 45,
+    "skinSmoothColorIntensity": 40
+   },
+   {
+    "category": "foundation",
+    "palettes": [
+     {
+      "color": "#AE774E",
+      "colorIntensity": 30,
+      "glowIntensity": 40,
+      "coverageIntensity": 40
+     }
+    ]
+   },
+   {
+    "category": "lip_color",
+    "shape": {
+     "name": "original"
+    },
+    "style": {
+     "type": "full"
+    },
+    "palettes": [
+     {
+      "color": "#A8442E",
+      "texture": "matte",
+      "colorIntensity": 80
+     }
+    ]
+   },
+   {
+    "category": "eye_shadow",
+    "pattern": {
+     "name": "3colors1"
+    },
+    "palettes": [
+     {
+      "color": "#A57C3C",
+      "texture": "metallic",
+      "colorIntensity": 65,
+      "shimmerColor": "#E6C27A",
+      "shimmerIntensity": 55,
+      "metallicIntensity": 50
+     },
+     {
+      "color": "#7A6A3A",
+      "texture": "matte",
+      "colorIntensity": 60
+     },
+     {
+      "color": "#4E4A2C",
+      "texture": "matte",
+      "colorIntensity": 55
+     }
+    ]
+   },
+   {
+    "category": "eye_liner",
+    "pattern": {
+     "name": "Arabic3"
+    },
+    "palettes": [
+     {
+      "color": "#111111",
+      "texture": "matte",
+      "colorIntensity": 85
+     }
+    ]
+   },
+   {
+    "category": "eyelashes",
+    "pattern": {
+     "name": "Natural1"
+    },
+    "palettes": [
+     {
+      "color": "#111111",
+      "colorIntensity": 80
+     }
+    ]
+   },
+   {
+    "category": "blush",
+    "pattern": {
+     "name": "1color1"
+    },
+    "palettes": [
+     {
+      "color": "#B4566A",
+      "texture": "matte",
+      "colorIntensity": 40
+     }
+    ]
+   },
+   {
+    "category": "contour",
+    "pattern": {
+     "name": "OvalFace6"
+    },
+    "palettes": [
+     {
+      "color": "#8C5A3C",
+      "colorIntensity": 35
+     }
+    ]
+   }
+  ],
+  "version": "1.0"
+ },
+ "result": "result.jpg",
+ "cache_key": "863a84c629a40c31845c9e426fc274f4de79a8b908afb92ae5655b435f4bda7c",
+ "stored_at": 1793459658
+}

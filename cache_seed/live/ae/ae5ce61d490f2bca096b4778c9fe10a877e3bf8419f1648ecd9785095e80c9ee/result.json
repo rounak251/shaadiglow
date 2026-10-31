@@ -1,0 +1,185 @@
+{
+ "feature": "skin_analysis",
+ "api": "AI Skin Analysis",
+ "task_id": "j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYzw88T7VTXAR2SWbEeNwAQXV8vjSsGp_00cofvLX8kY0w",
+ "units": 14,
+ "mode": "live",
+ "elapsed_s": 8.31,
+ "polls": 3,
+ "calls": [
+  "POST /s2s/v2.1/task/skin-analysis -> 200",
+  "GET /s2s/v2.1/task/skin-analysis/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYzw88T7VTXAR2SWbEeNwAQXV8vjSsGp_00cofvLX8kY0w -> 200",
+  "GET /s2s/v2.1/task/skin-analysis/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYzw88T7VTXAR2SWbEeNwAQXV8vjSsGp_00cofvLX8kY0w -> 200",
+  "GET /s2s/v2.1/task/skin-analysis/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYzw88T7VTXAR2SWbEeNwAQXV8vjSsGp_00cofvLX8kY0w -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "dst_actions": [
+   "acne",
+   "pore",
+   "texture",
+   "oiliness",
+   "moisture",
+   "redness",
+   "age_spot",
+   "dark_circle_v2",
+   "eye_bag",
+   "radiance",
+   "wrinkle",
+   "skin_type"
+  ],
+  "miniserver_args": {
+   "enable_mask_overlay": false
+  },
+  "format": "json"
+ },
+ "results": {
+  "output": [
+   {
+    "ui_score": 82,
+    "mask_urls": [
+     "m0_0.png"
+    ],
+    "raw_score": 84.04777646064758,
+    "type": "eye_bag",
+    "url": null
+   },
+   {
+    "ui_score": 75,
+    "mask_urls": [
+     "m1_0.png"
+    ],
+    "raw_score": 67.90638732910156,
+    "type": "redness",
+    "url": null
+   },
+   {
+    "ui_score": 70,
+    "mask_urls": [
+     "m2_0.png"
+    ],
+    "raw_score": 56.838056206703186,
+    "type": "pore",
+    "url": null
+   },
+   {
+    "ui_score": 97,
+    "mask_urls": [
+     "m3_0.png"
+    ],
+    "raw_score": 98.66330623626709,
+    "type": "texture",
+    "url": null
+   },
+   {
+    "ui_score": 78,
+    "mask_urls": [
+     "m4_0.png"
+    ],
+    "raw_score": 74.95758819580078,
+    "type": "oiliness",
+    "url": null
+   },
+   {
+    "ui_score": 94,
+    "mask_urls": [
+     "m5_0.png"
+    ],
+    "raw_score": 97.18467712402344,
+    "type": "age_spot",
+    "url": null
+   },
+   {
+    "ui_score": 76,
+    "mask_urls": [
+     "m6_0.png"
+    ],
+    "raw_score": 78.20228636264801,
+    "type": "dark_circle_v2",
+    "url": null
+   },
+   {
+    "ui_score": 88,
+    "mask_urls": [
+     "m7_0.png"
+    ],
+    "raw_score": 92.02203154563904,
+    "type": "radiance",
+    "url": null
+   },
+   {
+    "ui_score": 85,
+    "mask_urls": [
+     "m8_0.png"
+    ],
+    "raw_score": 92.46771335601807,
+    "type": "wrinkle",
+    "url": null
+   },
+   {
+    "ui_score": 86,
+    "mask_urls": [
+     "m9_0.png"
+    ],
+    "raw_score": 90.87306999999998,
+    "type": "acne",
+    "url": null
+   },
+   {
+    "ui_score": 78,
+    "mask_urls": [
+     "m10_0.png"
+    ],
+    "raw_score": 72.43937253952026,
+    "type": "moisture",
+    "url": null
+   },
+   {
+    "mask_urls": [
+     "m11_0.png"
+    ],
+    "type": "skin_type",
+    "region": "whole",
+    "skin_type": "Oily",
+    "url": null
+   },
+   {
+    "mask_urls": [
+     "m12_0.png"
+    ],
+    "type": "skin_type",
+    "region": "t_zone",
+    "skin_type": "Normal",
+    "url": null
+   },
+   {
+    "mask_urls": [
+     "m13_0.png"
+    ],
+    "type": "skin_type",
+    "region": "u_zone",
+    "skin_type": "Oily",
+    "url": null
+   },
+   {
+    "score": 82.63636363636364,
+    "type": "all",
+    "url": null
+   },
+   {
+    "score": 26,
+    "type": "skin_age",
+    "url": null
+   },
+   {
+    "mask_urls": [
+     "m16_0.jpg"
+    ],
+    "type": "resize_image",
+    "url": null
+   }
+  ]
+ },
+ "cache_key": "ae5ce61d490f2bca096b4778c9fe10a877e3bf8419f1648ecd9785095e80c9ee",
+ "stored_at": 1793459627
+}

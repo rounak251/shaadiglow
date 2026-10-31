@@ -125,3 +125,9 @@ def test_documented_skin_tiers():
     assert [skin_analysis_units(n, hd=True) for n in (4, 8, 12, 16)] == [12, 16, 20, 22]
     assert len(FULL_SCAN) == 12 and skin_analysis_units(len(FULL_SCAN)) == 14
     assert {r["units"] for r in cost_table()} >= {14, 9, 4, 2, 1, 0}
+
+
+def test_demo_only_persona_hidden_in_live_mode():
+    from app.mock.personas import public_list
+    assert "meera" in [p["id"] for p in public_list()]
+    assert [p["id"] for p in public_list(live=True)] == ["ananya", "arjun"]

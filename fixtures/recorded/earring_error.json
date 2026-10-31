@@ -1,0 +1,23 @@
+{
+ "error": "YouCam engine error 2: earlobe alignment not confident.",
+ "request": {
+  "src_file_id": "<file_id>",
+  "ref_file_ids": [
+   "zhTDbWMNBLeqykdAOwGF2UbNVa+3qwJKyJ4JXszMuYELbKfeLEmuXUa9yH4wuc2K"
+  ],
+  "source_info": {
+   "name": "30MzWlsiwckv5/t9lt559u2Z/TllkQpfOSOSLbCNM5ALbKfeLEmuXUa9yH4wuc2K"
+  },
+  "object_infos": [
+   {
+    "name": "zhTDbWMNBLeqykdAOwGF2UbNVa+3qwJKyJ4JXszMuYELbKfeLEmuXUa9yH4wuc2K",
+    "parameter": {
+     "earring_need_remove_background": true,
+     "earring_occluded_type": 0,
+     "earring_shadow_intensity": 0.35,
+     "earring_ambient_light_intensity": 0.8
+    }
+   }
+  ]
+ }
+}

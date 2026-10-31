@@ -65,7 +65,7 @@ def main():
     proc, base = start_server()
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch()
+            browser = p.chromium.launch(channel=os.environ.get("PW_CHANNEL") or None)
             ctx = browser.new_context(viewport={"width": 390, "height": 844}, device_scale_factor=2, is_mobile=True,
                                       has_touch=True)
             page = ctx.new_page()
@@ -101,9 +101,11 @@ def main():
             settle(page)
             page.screenshot(path=SHOTS / "04-countdown-plan.png")
             scroll_to(page, ".screen .seg", -64)
-            page.locator('[data-act="why"]').first.click()
-            settle(page, 400)
-            page.screenshot(path=EXTRA / "plan-why.png")
+            why = page.locator('[data-act="why"]')
+            if why.count():          # early phases (basic cleanse/moisturise/SPF) have no "Why?" yet
+                why.first.click()
+                settle(page, 400)
+                page.screenshot(path=EXTRA / "plan-why.png")
 
             page.click('.nav a[href="#/looks"]')
             page.wait_for_selector(".lookcard")
@@ -115,12 +117,12 @@ def main():
             page.screenshot(path=SHOTS / "05-look-studio.png")
             page.click('[data-act="add-many"]')
             page.click('[data-act="ltab"][data-tab="jewel"]')
-            page.click('[data-act="tryprod"][data-id="jhumka_gold"]')
+            page.click('[data-act="tryprod"][data-id="kundan_choker"]')
             page.wait_for_selector("#viewer img.after", timeout=60000)
             page.wait_for_selector(".toast", state="detached", timeout=10000)
             settle(page)
             page.screenshot(path=EXTRA / "jewellery.png")
-            page.click('[data-act="add"][data-id="jhumka_gold"]')
+            page.click('[data-act="add"][data-id="kundan_choker"]')
 
             page.click('.nav a[href="#/plan"]')
             page.wait_for_selector('[data-act="shop-routine"]')

@@ -1,0 +1,37 @@
+{
+ "feature": "necklace",
+ "api": "AI Necklace Virtual Try-On",
+ "task_id": "FQg8A_YQ0d6-7zeUaf80ULcTpJUZpToIHpYS-JxAnQvjussicznP3y73vAo02Y7ursVEnq3ffBAO2Lf_ZLul6Q",
+ "units": 1,
+ "mode": "live",
+ "elapsed_s": 5.73,
+ "polls": 3,
+ "calls": [
+  "POST /s2s/v2.0/task/2d-vto/necklace -> 200",
+  "GET /s2s/v2.0/task/2d-vto/necklace/FQg8A_YQ0d6-7zeUaf80ULcTpJUZpToIHpYS-JxAnQvjussicznP3y73vAo02Y7ursVEnq3ffBAO2Lf_ZLul6Q -> 200",
+  "GET /s2s/v2.0/task/2d-vto/necklace/FQg8A_YQ0d6-7zeUaf80ULcTpJUZpToIHpYS-JxAnQvjussicznP3y73vAo02Y7ursVEnq3ffBAO2Lf_ZLul6Q -> 200",
+  "GET /s2s/v2.0/task/2d-vto/necklace/FQg8A_YQ0d6-7zeUaf80ULcTpJUZpToIHpYS-JxAnQvjussicznP3y73vAo02Y7ursVEnq3ffBAO2Lf_ZLul6Q -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "ref_file_ids": [
+   "<file_id>"
+  ],
+  "source_info": {
+   "name": "<file_id>"
+  },
+  "object_infos": [
+   {
+    "name": "<file_id>",
+    "parameter": {
+     "necklace_need_remove_background": true,
+     "necklace_shadow_intensity": 0.3,
+     "necklace_ambient_light_intensity": 0.8
+    }
+   }
+  ]
+ },
+ "result": "result.jpg",
+ "cache_key": "6890279b2f333920aa7510bf2e3dec430f3523921c14086769c233c0a3068e0f",
+ "stored_at": 1793459797
+}

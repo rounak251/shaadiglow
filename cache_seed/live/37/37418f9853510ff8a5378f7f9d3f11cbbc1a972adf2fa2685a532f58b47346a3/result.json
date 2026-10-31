@@ -1,0 +1,111 @@
+{
+ "feature": "makeup_vto",
+ "api": "AI Makeup Virtual Try-On",
+ "task_id": "j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYwHlWH65wt96cPQa_d67zOhd-BTT-LvvMAmKHuvXEbI5Q",
+ "units": 1,
+ "mode": "live",
+ "elapsed_s": 7.6,
+ "polls": 4,
+ "calls": [
+  "POST /s2s/v2.0/task/makeup-vto -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYwHlWH65wt96cPQa_d67zOhd-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYwHlWH65wt96cPQa_d67zOhd-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYwHlWH65wt96cPQa_d67zOhd-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYwHlWH65wt96cPQa_d67zOhd-BTT-LvvMAmKHuvXEbI5Q -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "effects": [
+   {
+    "category": "skin_smooth",
+    "skinSmoothStrength": 45,
+    "skinSmoothColorIntensity": 40
+   },
+   {
+    "category": "foundation",
+    "palettes": [
+     {
+      "color": "#AE774E",
+      "colorIntensity": 30,
+      "glowIntensity": 40,
+      "coverageIntensity": 30
+     }
+    ]
+   },
+   {
+    "category": "lip_color",
+    "shape": {
+     "name": "original"
+    },
+    "style": {
+     "type": "full"
+    },
+    "palettes": [
+     {
+      "color": "#E2654F",
+      "texture": "satin",
+      "colorIntensity": 80
+     }
+    ]
+   },
+   {
+    "category": "eye_liner",
+    "pattern": {
+     "name": "Arabic3"
+    },
+    "palettes": [
+     {
+      "color": "#4A2C1E",
+      "texture": "matte",
+      "colorIntensity": 70
+     }
+    ]
+   },
+   {
+    "category": "eyelashes",
+    "pattern": {
+     "name": "Natural1"
+    },
+    "palettes": [
+     {
+      "color": "#111111",
+      "colorIntensity": 80
+     }
+    ]
+   },
+   {
+    "category": "blush",
+    "pattern": {
+     "name": "1color1"
+    },
+    "palettes": [
+     {
+      "color": "#E9967A",
+      "texture": "matte",
+      "colorIntensity": 45
+     }
+    ]
+   },
+   {
+    "category": "highlighter",
+    "pattern": {
+     "name": "OvalFace2"
+    },
+    "palettes": [
+     {
+      "color": "#E9C27A",
+      "glowIntensity": 65,
+      "shimmerIntensity": 55,
+      "shimmerDensity": 50,
+      "shimmerSize": 45,
+      "colorIntensity": 55
+     }
+    ]
+   }
+  ],
+  "version": "1.0"
+ },
+ "result": "result.jpg",
+ "cache_key": "37418f9853510ff8a5378f7f9d3f11cbbc1a972adf2fa2685a532f58b47346a3",
+ "stored_at": 1793459647
+}

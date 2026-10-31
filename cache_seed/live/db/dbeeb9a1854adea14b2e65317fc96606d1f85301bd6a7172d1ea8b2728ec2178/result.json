@@ -1,0 +1,24 @@
+{
+ "feature": "hair_color",
+ "api": "AI Hair Color Virtual Try-On",
+ "task_id": "yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZirvWuu2DXaxRgApsM6B1-DtzZw-qXapKUf8ErhvArwA",
+ "units": 1,
+ "mode": "live",
+ "elapsed_s": 13.49,
+ "polls": 5,
+ "calls": [
+  "POST /s2s/v2.0/task/hair-color -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZirvWuu2DXaxRgApsM6B1-DtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZirvWuu2DXaxRgApsM6B1-DtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZirvWuu2DXaxRgApsM6B1-DtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZirvWuu2DXaxRgApsM6B1-DtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZirvWuu2DXaxRgApsM6B1-DtzZw-qXapKUf8ErhvArwA -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "preset": "Burgundy"
+ },
+ "result": "result.jpg",
+ "cache_key": "dbeeb9a1854adea14b2e65317fc96606d1f85301bd6a7172d1ea8b2728ec2178",
+ "stored_at": 1793459711
+}

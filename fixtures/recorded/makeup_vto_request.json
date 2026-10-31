@@ -1,0 +1,22 @@
+{
+ "src_file_id": "<file_id>",
+ "version": "1.0",
+ "effects": [
+  {
+   "category": "lip_color",
+   "shape": {
+    "name": "original"
+   },
+   "style": {
+    "type": "full"
+   },
+   "palettes": [
+    {
+     "color": "#B3132B",
+     "texture": "matte",
+     "colorIntensity": 80
+    }
+   ]
+  }
+ ]
+}

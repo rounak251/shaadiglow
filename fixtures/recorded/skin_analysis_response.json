@@ -1,0 +1,82 @@
+{
+ "status": 200,
+ "data": {
+  "error": null,
+  "results": {
+   "output": [
+    {
+     "ui_score": 70,
+     "mask_urls": [
+      "https://yce-us.s3-accelerate.amazonaws.com/ttl30/519529175795641368/123865836683/v2/aeMNNB0KmUIP8rnQ996tC5Q/8c26e81b-59f3-403a-b053-ba6b58894a2e_pore_output.png?<signature-redacted>"
+     ],
+     "raw_score": 56.838056206703186,
+     "type": "pore",
+     "url": null
+    },
+    {
+     "ui_score": 86,
+     "mask_urls": [
+      "https://yce-us.s3-accelerate.amazonaws.com/ttl30/519529175795641368/123865836683/v2/aeMNNB0KmUIP8rnQ996tC5Q/8c26e81b-59f3-403a-b053-ba6b58894a2e_acne_output.png?<signature-redacted>"
+     ],
+     "raw_score": 90.87306999999998,
+     "type": "acne",
+     "url": null
+    },
+    {
+     "ui_score": 78,
+     "mask_urls": [
+      "https://yce-us.s3-accelerate.amazonaws.com/ttl30/519529175795641368/123865836683/v2/aeMNNB0KmUIP8rnQ996tC5Q/8c26e81b-59f3-403a-b053-ba6b58894a2e_oiliness_output.png?<signature-redacted>"
+     ],
+     "raw_score": 74.95759582519531,
+     "type": "oiliness",
+     "url": null
+    },
+    {
+     "mask_urls": [
+      "https://yce-us.s3-accelerate.amazonaws.com/ttl30/519529175795641368/123865836683/v2/aeMNNB0KmUIP8rnQ996tC5Q/8c26e81b-59f3-403a-b053-ba6b58894a2e_skin_type_output.png?<signature-redacted>"
+     ],
+     "type": "skin_type",
+     "region": "whole",
+     "skin_type": "Oily",
+     "url": null
+    },
+    {
+     "mask_urls": [
+      "https://yce-us.s3-accelerate.amazonaws.com/ttl30/519529175795641368/123865836683/v2/aeMNNB0KmUIP8rnQ996tC5Q/8c26e81b-59f3-403a-b053-ba6b58894a2e_skin_type_t_zone_output.png?<signature-redacted>"
+     ],
+     "type": "skin_type",
+     "region": "t_zone",
+     "skin_type": "Normal",
+     "url": null
+    },
+    {
+     "mask_urls": [
+      "https://yce-us.s3-accelerate.amazonaws.com/ttl30/519529175795641368/123865836683/v2/aeMNNB0KmUIP8rnQ996tC5Q/8c26e81b-59f3-403a-b053-ba6b58894a2e_skin_type_u_zone_output.png?<signature-redacted>"
+     ],
+     "type": "skin_type",
+     "region": "u_zone",
+     "skin_type": "Oily",
+     "url": null
+    },
+    {
+     "score": 78.0,
+     "type": "all",
+     "url": null
+    },
+    {
+     "score": 26,
+     "type": "skin_age",
+     "url": null
+    },
+    {
+     "mask_urls": [
+      "https://yce-us.s3-accelerate.amazonaws.com/ttl30/519529175795641368/123865836683/v2/aeMNNB0KmUIP8rnQ996tC5Q/8c26e81b-59f3-403a-b053-ba6b58894a2e_resize_image.jpg?<signature-redacted>"
+     ],
+     "type": "resize_image",
+     "url": null
+    }
+   ]
+  },
+  "task_status": "success"
+ }
+}

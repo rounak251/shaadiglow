@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from .concerns import CONCERNS
 
-NOISE_BAND = 3   # ui_score points; tune with scripts/live_smoke.py --noise once a key exists
+NOISE_BAND = 2   # ui_score points; measured live 31 Oct 2026: two scans of one photo differed by at most 1
 
 
 def tracked(baseline: dict, k: int = 4) -> list[str]:

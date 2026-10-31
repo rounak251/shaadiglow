@@ -86,9 +86,9 @@ SCENES = [
                   ("drag_compare", "#goalbody [data-compare]")]),
     dict(step="6 · Plan", title="A countdown plan you can audit",
          body="Scores → ingredients → AM/PM routine, tuned to Mumbai's humidity and UV, her budget and the "
-              "days left. Every step has a 'why'.",
+              "days left. Every active has a 'why'.",
          apis=["Deterministic rules engine", "Calendar (.ics) export"],
-         say="The countdown plan comes from a deterministic rules engine. Her scores map to ingredients and a morning and night routine, tuned to Mumbai's humidity and UV, her budget, and the days left. Every step has a why, and it enforces wedding rules: patch tests, nothing new in the final fourteen days, and natural henna only.",
+         say="The countdown plan comes from a deterministic rules engine. Her scores map to ingredients and a morning and night routine, tuned to Mumbai's humidity and UV, her budget, and the days left. Every active ingredient comes with a why, and it enforces wedding rules: patch tests, nothing new in the final fourteen days, and natural henna only.",
          actions=[("click", '[data-act="nav"][data-to="plan"]'), ("wait_for", ".countdown"), ("wait", 1500),
                   ("scroll", 560), ("click_first", '[data-act="why"]'), ("wait", 1200), ("scroll", 700),
                   ("wait", 1200), ("scroll", 600)]),
@@ -98,14 +98,14 @@ SCENES = [
          say="In the look studio, each event is one AI Makeup Virtual Try-On request that stacks lipstick, kohl, eyeshadow, blush, highlighter and a shade-matched foundation. One unit, one complete pheras look.",
          actions=[("goto", "#/looks"), ("wait_for", ".lookcard"), ("click", '.lookcard[data-id="pheras_red"]'),
                   ("wait_for", "#viewer img.after"), ("drag_compare", "#viewer [data-compare]")]),
-    dict(step="8 · Hair & jewellery", title="Hair colour, jhumkas and more",
+    dict(step="8 · Hair & jewellery", title="Hair colour, kundan and more",
          body="Try a shade before the salon and jewellery before buying. Grooms get beard styles.",
          apis=["AI Hair Color · 1 unit", "AI Earrings · 1 unit", "AI Necklace · 1 unit", "AI Beard Style · 2 units"],
-         say="AI Hair Color tries a burgundy shade, and AI Earrings tries temple jhumkas. Necklaces use the AI Necklace try-on, and grooms get the AI Beard Style Generator.",
+         say="AI Hair Color tries a burgundy shade, and AI Necklace tries a kundan choker. Earrings use the AI Earrings try-on, and grooms get the AI Beard Style Generator.",
          actions=[("click", '[data-act="ltab"][data-tab="hair"]'), ("click", '[data-act="tryprod"][data-id="hair_burgundy"]'),
                   ("wait_for_new", "#viewer img.after"), ("click", '[data-act="ltab"][data-tab="jewel"]'),
-                  ("click", '[data-act="tryprod"][data-id="jhumka_gold"]'), ("wait_for_new", "#viewer img.after"),
-                  ("click", '[data-act="add"][data-id="jhumka_gold"]'), ("scroll", -2400)]),
+                  ("click", '[data-act="tryprod"][data-id="kundan_choker"]'), ("wait_for_new", "#viewer img.after"),
+                  ("click", '[data-act="add"][data-id="kundan_choker"]'), ("scroll", -2400)]),
     dict(step="9 · Shop", title="Shop the look: one cart",
          body="Routine, look and jewellery together, each item tagged with the concern it treats. Sample store.",
          apis=["Sample catalogue (fictional)"],
@@ -160,7 +160,7 @@ def render_overlays(tmp: Path, p, app_base: str) -> None:
     """Background, phone bezel, rounded-screen mask and one caption panel per scene (HTML -> PNG)."""
     base = (f"<link rel='stylesheet' href='/static/fonts/fonts.css'><style>*{{margin:0;box-sizing:border-box}}"
             f"body{{width:{W}px;height:{H}px;font-family:'Plus Jakarta Sans';}}</style>")
-    browser = p.chromium.launch()
+    browser = p.chromium.launch(channel=os.environ.get("PW_CHANNEL") or None)
     page = browser.new_page(viewport={"width": W, "height": H})
     page.goto(app_base + "/api/health")          # same origin as the self-hosted fonts
 
@@ -234,7 +234,9 @@ def act(page, a, base):
         page.wait_for_selector(arg, timeout=60000)
         page.click(arg)
     elif kind == "click_first":
-        page.locator(arg).first.click()
+        loc = page.locator(arg)
+        if loc.count():
+            loc.first.click()
     elif kind == "wait_for":
         page.wait_for_selector(arg, timeout=60000)
     elif kind == "wait_for_new":
@@ -290,7 +292,7 @@ def main():
     try:
         with sync_playwright() as p:
             render_overlays(tmp, p, base)
-            browser = p.chromium.launch()
+            browser = p.chromium.launch(channel=os.environ.get("PW_CHANNEL") or None)
             ctx = browser.new_context(viewport={"width": 390, "height": 844}, device_scale_factor=2, is_mobile=True,
                                       has_touch=True)
             ctx.add_init_script(TAP_JS)

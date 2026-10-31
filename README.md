@@ -44,7 +44,7 @@ the exact products in one basket.
 | | Jhumkas, chandbalis, studs; kundan choker, temple haar, pearl layers | AI Earrings / AI Necklace Virtual Try-On | 1 |
 | | Groom beard styles (live template list) | AI Beard Style Generator | 2 |
 | 6. Shop the look | One cart: routine + look + jewellery, each item tagged with the concern it treats, budget meter, WhatsApp share | sample catalogue | 0 |
-| 7. Progress | Quick re-scan of the 4 tracked concerns; deltas inside ±3 points are "steady" | AI Skin Analysis (4 concerns) | 9 |
+| 7. Progress | Quick re-scan of the 4 tracked concerns; deltas inside ±2 points are "steady" | AI Skin Analysis (4 concerns) | 9 |
 | Privacy | "Delete my photos & results" also deletes every YouCam task and file | Task Management API | 0 |
 
 English and Hindi (हिंदी) throughout, including the plan's explanations.

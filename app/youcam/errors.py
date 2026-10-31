@@ -21,6 +21,12 @@ ENGINE_HINTS = {
     "OBJECT_DETECTION_FAIL": "That jewellery image couldn't be read.",
 }
 
+# Some engine errors arrive with a bare numeric code; the message says what went wrong.
+# Seen live (31 Oct 2026): AI Earrings -> code "2", "earlobe alignment not confident".
+MESSAGE_HINTS = (
+    ("earlobe", "We couldn't see your earlobes clearly. Tuck your hair behind your ears and retake."),
+)
+
 
 class YouCamError(Exception):
     """HTTP-level failure (4xx/5xx) from the YouCam API."""
@@ -53,7 +59,13 @@ class YouCamEngineError(Exception):
 
     @property
     def hint(self) -> str:
-        return ENGINE_HINTS.get(self.code, "The AI couldn't process this photo. Try another one.")
+        if self.code in ENGINE_HINTS:
+            return ENGINE_HINTS[self.code]
+        msg = self.message.lower()
+        for needle, text in MESSAGE_HINTS:
+            if needle in msg:
+                return text
+        return "The AI couldn't process this photo. Try another one."
 
 
 class YouCamTimeout(Exception):

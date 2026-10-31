@@ -1,0 +1,70 @@
+{
+ "feature": "makeup_vto",
+ "api": "AI Makeup Virtual Try-On",
+ "task_id": "E3pAHoZAm9orMdhYLX1JF6DYkj4ljQ7CrsONi05GKHjntJFxyn-G4Y1UNUnECfh-d-BTT-LvvMAmKHuvXEbI5Q",
+ "units": 1,
+ "mode": "live",
+ "elapsed_s": 7.64,
+ "polls": 4,
+ "calls": [
+  "POST /s2s/v2.0/task/makeup-vto -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/E3pAHoZAm9orMdhYLX1JF6DYkj4ljQ7CrsONi05GKHjntJFxyn-G4Y1UNUnECfh-d-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/E3pAHoZAm9orMdhYLX1JF6DYkj4ljQ7CrsONi05GKHjntJFxyn-G4Y1UNUnECfh-d-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/E3pAHoZAm9orMdhYLX1JF6DYkj4ljQ7CrsONi05GKHjntJFxyn-G4Y1UNUnECfh-d-BTT-LvvMAmKHuvXEbI5Q -> 200",
+  "GET /s2s/v2.0/task/makeup-vto/E3pAHoZAm9orMdhYLX1JF6DYkj4ljQ7CrsONi05GKHjntJFxyn-G4Y1UNUnECfh-d-BTT-LvvMAmKHuvXEbI5Q -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "effects": [
+   {
+    "category": "skin_smooth",
+    "skinSmoothStrength": 35,
+    "skinSmoothColorIntensity": 40
+   },
+   {
+    "category": "foundation",
+    "palettes": [
+     {
+      "color": "#C08A60",
+      "colorIntensity": 30,
+      "glowIntensity": 40,
+      "coverageIntensity": 25
+     }
+    ]
+   },
+   {
+    "category": "concealer",
+    "palettes": [
+     {
+      "color": "#E9A07D",
+      "colorIntensity": 55,
+      "colorUnderEyeIntensity": 60,
+      "coverageLevel": 55
+     }
+    ]
+   },
+   {
+    "category": "lip_color",
+    "shape": {
+     "name": "original"
+    },
+    "style": {
+     "type": "full"
+    },
+    "palettes": [
+     {
+      "color": "#B97F72",
+      "texture": "sheer",
+      "colorIntensity": 80,
+      "gloss": 60,
+      "transparencyIntensity": 35
+     }
+    ]
+   }
+  ],
+  "version": "1.0"
+ },
+ "result": "result.jpg",
+ "cache_key": "9858f1c72b2ee5812638f1f899b5b71ddce5845d1952ffd032b2d29fe8aeff51",
+ "stored_at": 1793459825
+}

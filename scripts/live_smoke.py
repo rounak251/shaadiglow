@@ -43,6 +43,7 @@ from app.engine import catalog, looks  # noqa: E402
 from app.engine.progress import tracked  # noqa: E402
 from app.mock.personas import variant_bytes  # noqa: E402
 from app.services import YouCamService  # noqa: E402
+from app.youcam.errors import YouCamEngineError  # noqa: E402
 from app.youcam.client import YouCamClient, result_urls  # noqa: E402
 from app.youcam.features import FULL_SCAN, units_for  # noqa: E402
 
@@ -181,6 +182,15 @@ async def prewarm(level: str, dry: bool, settings=None, seed_root: Path = SEED) 
     s = settings or load_settings()
     s.data_dir, s.seed_dirs, s.reserve_units, s.client_daily_units = tmp, [seed_root], 0, 10**6
     svc = YouCamService(s)
+    skipped = []
+
+    async def attempt(label, coro):
+        # Engine errors (bad photo for this feature) cost no units: note them and keep going.
+        try:
+            return await coro
+        except YouCamEngineError as e:
+            skipped.append({"call": label, "code": e.code, "message": e.message})
+            print(f"  skipped {label}: {e.message}")
     try:
         for pid, p in plan.items():
             ref = f"persona:{pid}"
@@ -189,22 +199,22 @@ async def prewarm(level: str, dry: bool, settings=None, seed_root: Path = SEED) 
             if pid == "arjun":
                 await svc.skin_scan("persona:arjun2", tracked(scan), "prewarm")
             if p.get("sim"):
-                await svc.run("skin_simulation", svc.image_bytes(ref, "face"),
-                              flows.sim_params(flows.sim_focus(scan)), "prewarm")
+                await attempt(f"{pid}/skin_simulation", svc.run("skin_simulation", svc.image_bytes(ref, "face"),
+                              flows.sim_params(flows.sim_focus(scan)), "prewarm"))
             shade = catalog.shade_for(imaging.cheek_colour(svc.image_bytes(ref, "face")))["id"]
             for lk in p["looks"]:
                 params, _ = flows.makeup_params(lk, shade)
-                await svc.run("makeup_vto", svc.image_bytes(ref, "face"), params, "prewarm")
+                await attempt(f"{pid}/makeup/{lk}", svc.run("makeup_vto", svc.image_bytes(ref, "face"), params, "prewarm"))
             for h in p["hair"]:
-                await svc.run("hair_color", svc.image_bytes(ref, "portrait"), flows.hair_params(h), "prewarm")
+                await attempt(f"{pid}/hair/{h}", svc.run("hair_color", svc.image_bytes(ref, "portrait"), flows.hair_params(h), "prewarm"))
             for j in p.get("jewel", []):
                 kind, ref_name, rp = flows.jewellery_spec(j)
-                await svc.run(kind, svc.image_bytes(ref, "portrait"), {}, "prewarm",
-                              refs=[svc.jewellery_ref(ref_name)], ref_params=rp)
+                await attempt(f"{pid}/{kind}/{j}", svc.run(kind, svc.image_bytes(ref, "portrait"), {}, "prewarm",
+                              refs=[svc.jewellery_ref(ref_name)], ref_params=rp))
             if p.get("beard"):
                 for t in (await svc.templates("beard_style"))[: p["beard"]]:
-                    await svc.run("beard_style", svc.image_bytes(ref, "beard"), flows.beard_params(t["id"]),
-                                  "prewarm")
+                    await attempt(f"{pid}/beard/{t['id']}", svc.run("beard_style", svc.image_bytes(ref, "beard"),
+                                  flows.beard_params(t["id"]), "prewarm"))
             print(f"  {pid}: done")
     finally:
         await svc.close()
@@ -218,6 +228,9 @@ async def prewarm(level: str, dry: bool, settings=None, seed_root: Path = SEED) 
                     shutil.copytree(d, dest)
                     n += 1
             print(f"copied {n} cached results into {seed_root}/{ns} (commit them)")
+        if skipped:
+            save_json("prewarm_skipped.json", skipped)
+            print(f"skipped {len(skipped)} calls (engine errors, 0 units); see fixtures/recorded/prewarm_skipped.json")
         print(f"units spent: {svc.ledger.spent}")
         shutil.rmtree(tmp, ignore_errors=True)
     return svc.ledger.spent

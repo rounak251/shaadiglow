@@ -1,0 +1,23 @@
+{
+ "feature": "hair_color",
+ "api": "AI Hair Color Virtual Try-On",
+ "task_id": "yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZUjRFF6KP-BnwKbkb4JfoHDtzZw-qXapKUf8ErhvArwA",
+ "units": 1,
+ "mode": "live",
+ "elapsed_s": 7.54,
+ "polls": 4,
+ "calls": [
+  "POST /s2s/v2.0/task/hair-color -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZUjRFF6KP-BnwKbkb4JfoHDtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZUjRFF6KP-BnwKbkb4JfoHDtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZUjRFF6KP-BnwKbkb4JfoHDtzZw-qXapKUf8ErhvArwA -> 200",
+  "GET /s2s/v2.0/task/hair-color/yQnm00C1kI3UbJsB1hFmgp9oIBdLJ_2pvT77kAsQh9ZUjRFF6KP-BnwKbkb4JfoHDtzZw-qXapKUf8ErhvArwA -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "preset": "Chocolate Brown"
+ },
+ "result": "result.jpg",
+ "cache_key": "a5e8859906bb3ba681dd7e31f3d719e08fb3042af2c7e471755bc70f70984583",
+ "stored_at": 1793459722
+}

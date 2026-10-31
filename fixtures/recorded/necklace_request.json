@@ -1,0 +1,19 @@
+{
+ "src_file_id": "<file_id>",
+ "ref_file_ids": [
+  "I5YGpiSnnen1lS0/bi8eD04esEqkFcfO4oHpH0CtuWULbKfeLEmuXUa9yH4wuc2K"
+ ],
+ "source_info": {
+  "name": "uQtObS/5AYMEzcwf8E+8DxCkXzkVdRyP91Ga4HbSzG4LbKfeLEmuXUa9yH4wuc2K"
+ },
+ "object_infos": [
+  {
+   "name": "I5YGpiSnnen1lS0/bi8eD04esEqkFcfO4oHpH0CtuWULbKfeLEmuXUa9yH4wuc2K",
+   "parameter": {
+    "necklace_need_remove_background": true,
+    "necklace_shadow_intensity": 0.3,
+    "necklace_ambient_light_intensity": 0.8
+   }
+  }
+ ]
+}

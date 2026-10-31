@@ -170,3 +170,11 @@ def test_client_retries_429(mock_api):
             c = YouCamClient("k-123456789", BASE, http, sleep=nosleep)
             return await c.credit()
     assert run(go()) == 5.5 and calls["n"] == 3
+
+
+def test_engine_error_hint_from_message_when_code_is_numeric():
+    # Real response from AI Earrings on 31 Oct 2026: bare code "2" plus a message.
+    e = YouCamEngineError("2", "earlobe alignment not confident")
+    assert "behind your ears" in e.hint
+    assert YouCamEngineError("2", "something else").hint.startswith("The AI couldn't process")
+    assert YouCamEngineError("error_no_face").hint.startswith("We couldn't find a face")

@@ -1,0 +1,25 @@
+{
+ "feature": "skin_simulation",
+ "api": "AI Skin Simulation",
+ "task_id": "j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYyQyYwmMIIRFabwVglxhibIkiOzep5m_kY_sYO3hho_0w",
+ "units": 4,
+ "mode": "live",
+ "elapsed_s": 5.33,
+ "polls": 3,
+ "calls": [
+  "POST /s2s/v2.0/task/skin-simulation -> 200",
+  "GET /s2s/v2.0/task/skin-simulation/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYyQyYwmMIIRFabwVglxhibIkiOzep5m_kY_sYO3hho_0w -> 200",
+  "GET /s2s/v2.0/task/skin-simulation/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYyQyYwmMIIRFabwVglxhibIkiOzep5m_kY_sYO3hho_0w -> 200",
+  "GET /s2s/v2.0/task/skin-simulation/j7DRTkvNvXiHGP129-f99quEPwVxQPFt572ATMHSCYyQyYwmMIIRFabwVglxhibIkiOzep5m_kY_sYO3hho_0w -> 200"
+ ],
+ "request": {
+  "src_file_id": "<file_id>",
+  "pores": 0.6,
+  "redness": 0.6,
+  "oiliness": 0.6,
+  "dark_circle": 0.6
+ },
+ "result": "result.jpg",
+ "cache_key": "9535828ea58607d9f1b4ae110ac67d8efcc193e09d0307d479e07fe1550765c1",
+ "stored_at": 1793459636
+}
