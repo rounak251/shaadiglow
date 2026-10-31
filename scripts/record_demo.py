@@ -113,7 +113,7 @@ SCENES = [
          actions=[("goto", "#/plan"), ("wait_for", '[data-act="shop-routine"]'), ("click", '[data-act="shop-routine"]'),
                   ("wait_for", ".totals"), ("wait", 1600), ("scroll", 500)]),
     dict(step="10 · Progress", title="Re-scans that respect noise",
-         body="Every 14 days: only the 4 tracked concerns (9 units). Changes within ±3 points count as steady.",
+         body="Every 14 days: only the 4 tracked concerns (9 units). Changes within ±2 points count as steady.",
          apis=["AI Skin Analysis · 9 units", "Task Delete API on 'delete my data'"],
          say="Every two weeks, a quick re-scan of four concerns costs nine units, and only changes beyond normal scan noise count as progress. Here's the sample groom's re-scan.",
          actions=[("goto", "#/progress"), ("click", '[data-act="demo-progress"]'), ("wait_for", ".pair"),
