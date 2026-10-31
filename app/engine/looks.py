@@ -59,7 +59,7 @@ LOOKS = [
 ]
 
 BY_ID = {lk["id"]: lk for lk in LOOKS}
-DEEP_SHADES = {"Caramel 330", "Almond 410", "Espresso 510"}
+DEEP_SHADES = {"Almond 410", "Espresso 510"}
 DEEPER_LIPS = {"lip_sindoor": "#8E1022", "lip_coral": "#C24A36", "lip_nude": "#9C5A55", "lip_mauve": "#7E4257"}
 
 

@@ -1,0 +1,74 @@
+[
+ {
+  "start": 0.0,
+  "step": "ShaadiGlow",
+  "title": "Wedding-ready skin, planned to the day",
+  "narration": "Namaste! India hosts around forty-six lakh weddings in one six-week season. Brides, grooms and guests all want to glow, but most start skin prep too late and buy looks they have never tried. Meet ShaadiGlow."
+ },
+ {
+  "start": 13.44,
+  "step": "1 \u00b7 Start",
+  "title": "Pick a sample bride, or take a guided selfie",
+  "narration": "It's a mobile web app. I'll pick Ananya, a sample bride in Mumbai, eight weeks out. Real users can take a guided selfie with YouCam's JS Camera Kit."
+ },
+ {
+  "start": 23.09,
+  "step": "2 \u00b7 Details",
+  "title": "Date, city, budget and events",
+  "narration": "She confirms her wedding date, city, budget, and the events she'll attend, from haldi to the reception."
+ },
+ {
+  "start": 29.48,
+  "step": "3 \u00b7 Scan",
+  "title": "AI Skin Analysis v2.1: 12 concerns",
+  "narration": "The photo goes through YouCam's File API, then AI Skin Analysis version two point one measures twelve concerns, chosen to fit the fourteen-unit tier."
+ },
+ {
+  "start": 38.86,
+  "step": "4 \u00b7 Report",
+  "title": "Scores, skin age and AI masks",
+  "narration": "Her report shows a skin score, skin age, and T-zone versus cheek skin type. Tap a concern to see where the AI looked. Oil control and dark circles are her focus."
+ },
+ {
+  "start": 49.82,
+  "step": "5 \u00b7 Goal",
+  "title": "AI Skin Simulation: her wedding-day goal",
+  "narration": "AI Skin Simulation previews a realistic wedding-day goal, labelled as a preview, not a promise."
+ },
+ {
+  "start": 56.12,
+  "step": "6 \u00b7 Plan",
+  "title": "A countdown plan you can audit",
+  "narration": "The countdown plan comes from a deterministic rules engine. Her scores map to ingredients and a morning and night routine, tuned to Mumbai's humidity and UV, her budget, and the days left. Every step has a why, and it enforces wedding rules: patch tests, nothing new in the final fourteen days, and natural henna only."
+ },
+ {
+  "start": 76.32,
+  "step": "7 \u00b7 Look studio",
+  "title": "One call = one complete event look",
+  "narration": "In the look studio, each event is one AI Makeup Virtual Try-On request that stacks lipstick, kohl, eyeshadow, blush, highlighter and a shade-matched foundation. One unit, one complete pheras look."
+ },
+ {
+  "start": 88.22,
+  "step": "8 \u00b7 Hair & jewellery",
+  "title": "Hair colour, jhumkas and more",
+  "narration": "AI Hair Color tries a burgundy shade, and AI Earrings tries temple jhumkas. Necklaces use the AI Necklace try-on, and grooms get the AI Beard Style Generator."
+ },
+ {
+  "start": 98.53,
+  "step": "9 \u00b7 Shop",
+  "title": "Shop the look: one cart",
+  "narration": "Everything she tried lands in one cart, each item tagged with the concern it treats, in a clearly marked sample store."
+ },
+ {
+  "start": 105.62,
+  "step": "10 \u00b7 Progress",
+  "title": "Re-scans that respect noise",
+  "narration": "Every two weeks, a quick re-scan of four concerns costs nine units, and only changes beyond normal scan noise count as progress. Here's the sample groom's re-scan."
+ },
+ {
+  "start": 116.98,
+  "step": "Under the hood",
+  "title": "Built to spend units once",
+  "narration": "Under the hood: FastAPI, a disk cache so no call is ever paid twice, a unit budget guard, and full Hindi support. ShaadiGlow: wedding-ready skin, planned to the day."
+ }
+]

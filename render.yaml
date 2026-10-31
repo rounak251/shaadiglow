@@ -19,3 +19,5 @@ services:
         value: "60"
       - key: SG_ALLOW_LIVE_UPLOADS
         value: "true"
+      - key: SG_CAMERA_KIT       # set to "false" to hide the YouCam Camera Kit button
+        value: "true"

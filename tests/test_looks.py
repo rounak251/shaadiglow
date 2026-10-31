@@ -34,8 +34,9 @@ def test_look_effects_follow_the_makeup_schema(look, shade):
 def test_deeper_shades_get_deeper_reds():
     light, _ = looks.effects_for("pheras_red", "found_1")
     deep, _ = looks.effects_for("pheras_red", "found_7")
+    medium, _ = looks.effects_for("pheras_red", "found_5")
     lip = lambda eff: next(e for e in eff if e["category"] == "lip_color")["palettes"][0]["color"]
-    assert lip(light) == "#B3132B" and lip(deep) == "#8E1022"
+    assert lip(light) == "#B3132B" and lip(medium) == "#B3132B" and lip(deep) == "#8E1022"
 
 
 def test_each_role_has_looks():

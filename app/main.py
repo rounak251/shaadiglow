@@ -21,7 +21,7 @@ from .config import load_settings
 from .engine import catalog, climate, looks, progress
 from .engine.ics import to_ics
 from .engine.planner import PlanInput, build_plan
-from .mock.personas import PERSONAS, public_list
+from .mock.personas import public_list
 from .services import YouCamService
 from .youcam.errors import BudgetExceeded, YouCamEngineError, YouCamError, YouCamTimeout
 from .youcam.features import FEATURES, FULL_SCAN, cost_table

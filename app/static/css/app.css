@@ -136,6 +136,7 @@ h3 { font-size: 15px; margin: 0 0 8px; }
   cursor: pointer; text-align: left; width: 100%; }
 .persona img { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; }
 .persona b { font-size: 15.5px; }
+.persona .chev { font-size: 28px; color: var(--maroon-2); padding: 0 6px; line-height: 1; }
 .persona .tiny { margin-top: 2px; }
 .journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 16px 0 4px; }
 .jstep { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 10px 6px 9px; text-align: center; position: relative; }
@@ -188,7 +189,7 @@ input[type=range] { width: 100%; accent-color: var(--maroon); }
 @keyframes pulse { 50% { transform: scale(.6); opacity: .5; } }
 
 /* ---------- report ---------- */
-.photo-card { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 4/5; max-height: 56vh; width: 100%; margin: 0 auto; background: #222; box-shadow: var(--shadow); }
+.photo-card { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 4/5; max-height: 50vh; width: 100%; margin: 0 auto; background: #222; box-shadow: var(--shadow); }
 .photo-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .photo-card .mask { transition: opacity .35s ease; }
 .photo-card .badge { position: absolute; left: 12px; bottom: 12px; background: rgba(20, 8, 12, .62); color: #fff; font-size: 11.5px;

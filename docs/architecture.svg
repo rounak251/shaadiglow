@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="hdr" x1="0" x2="1"><stop offset="0" stop-color="#7A1230"/><stop offset="1" stop-color="#A3193F"/></linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#7A1230"/></marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#B07A10"/></marker>
+  </defs>
+  <rect width="960" height="640" rx="18" fill="#FBF6F0"/>
+  <text x="32" y="44" font-size="22" font-weight="700" fill="#2A1418">ShaadiGlow architecture</text>
+  <text x="32" y="68" font-size="13" fill="#6E5256">One code path for demo and live: only the httpx transport changes when YOUCAM_API_KEY is set.</text>
+
+  <!-- phone -->
+  <rect x="32" y="96" width="230" height="500" rx="28" fill="#fff" stroke="#E2D2C6" stroke-width="2"/>
+  <rect x="32" y="96" width="230" height="58" rx="28" fill="url(#hdr)"/>
+  <rect x="32" y="130" width="230" height="24" fill="url(#hdr)"/>
+  <text x="147" y="131" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Phone web app</text>
+  <text x="147" y="149" font-size="11" fill="#FFD36B" text-anchor="middle">vanilla JS · EN / हिंदी · PWA</text>
+  <g font-size="12.5" fill="#2A1418">
+    <rect x="50" y="170" width="194" height="38" rx="10" fill="#FFF2D6"/><text x="62" y="186">① Guided selfie</text>
+    <text x="62" y="201" font-size="10" fill="#7a4b00">via YouCam JS Camera Kit</text>
+    <rect x="50" y="216" width="194" height="38" rx="10" fill="#F7E7EA"/><text x="62" y="240">② Skin report + masks</text>
+    <rect x="50" y="262" width="194" height="38" rx="10" fill="#F7E7EA"/><text x="62" y="286">③ Wedding-day goal</text>
+    <rect x="50" y="308" width="194" height="38" rx="10" fill="#F7E7EA"/><text x="62" y="332">④ Countdown plan + .ics</text>
+    <rect x="50" y="354" width="194" height="38" rx="10" fill="#F7E7EA"/><text x="62" y="378">⑤ Look studio (try-on)</text>
+    <rect x="50" y="400" width="194" height="38" rx="10" fill="#F7E7EA"/><text x="62" y="424">⑥ Shop the look (cart)</text>
+    <rect x="50" y="446" width="194" height="38" rx="10" fill="#F7E7EA"/><text x="62" y="470">⑦ Re-scan progress</text>
+  </g>
+  <text x="147" y="520" font-size="11" fill="#6E5256" text-anchor="middle">No API key in the browser.</text>
+  <text x="147" y="538" font-size="11" fill="#6E5256" text-anchor="middle">Units shown on every button.</text>
+  <text x="147" y="556" font-size="11" fill="#6E5256" text-anchor="middle">"Delete my data" button.</text>
+
+  <!-- arrow phone -> backend -->
+  <line x1="266" y1="330" x2="318" y2="330" stroke="#7A1230" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="292" y="318" font-size="10.5" fill="#7A1230" text-anchor="middle">HTTPS</text>
+  <text x="292" y="348" font-size="10.5" fill="#7A1230" text-anchor="middle">JSON</text>
+
+  <!-- backend -->
+  <rect x="322" y="96" width="322" height="500" rx="20" fill="#fff" stroke="#E2D2C6" stroke-width="2"/>
+  <text x="483" y="126" font-size="16" font-weight="700" fill="#2A1418" text-anchor="middle">FastAPI backend (Python)</text>
+  <g font-size="12" fill="#2A1418">
+    <rect x="340" y="142" width="286" height="74" rx="12" fill="#E2F3EF"/>
+    <text x="354" y="164" font-weight="700" fill="#23806F">Rules engine (deterministic, explainable)</text>
+    <text x="354" y="183">concerns → ingredients → AM/PM routine</text>
+    <text x="354" y="201">+ city climate · budget · days left · safety</text>
+    <rect x="340" y="226" width="286" height="56" rx="12" fill="#F7E7EA"/>
+    <text x="354" y="248" font-weight="700" fill="#7A1230">Looks + sample catalogue</text>
+    <text x="354" y="267">event look = 1 Makeup VTO request = 1 cart</text>
+    <rect x="340" y="292" width="286" height="74" rx="12" fill="#FFF2D6"/>
+    <text x="354" y="314" font-weight="700" fill="#7a4b00">Disk cache</text>
+    <text x="354" y="333">key = sha256(image) + feature + params</text>
+    <text x="354" y="351">repeat = 0 units · seed cache for sample models</text>
+    <rect x="340" y="376" width="286" height="74" rx="12" fill="#FFF2D6"/>
+    <text x="354" y="398" font-weight="700" fill="#7a4b00">Unit ledger + budget guard</text>
+    <text x="354" y="417">live balance (credit API) · reserve floor</text>
+    <text x="354" y="435">per-visitor daily cap · JSONL audit</text>
+    <rect x="340" y="460" width="286" height="118" rx="12" fill="#F3EEF9"/>
+    <text x="354" y="482" font-weight="700" fill="#5E3A8C">YouCam client (async httpx)</text>
+    <text x="354" y="501">POST /file → PUT pre-signed upload</text>
+    <text x="354" y="519">POST /task/&lt;feature&gt; → poll task_status</text>
+    <text x="354" y="537">download results now (URLs live 2 h)</text>
+    <text x="354" y="555">429 back-off · engine errors → user hints</text>
+    <text x="354" y="571" font-size="11" fill="#6E5256">Task Delete API on "delete my data"</text>
+  </g>
+
+  <!-- arrows backend -> live/mock -->
+  <line x1="648" y1="500" x2="700" y2="240" stroke="#7A1230" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="648" y1="530" x2="700" y2="500" stroke="#B07A10" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrg)"/>
+  <text x="668" y="330" font-size="11" fill="#7A1230" transform="rotate(-78 668 330)">YOUCAM_API_KEY set</text>
+  <text x="700" y="548" font-size="11" fill="#B07A10">no key</text>
+
+  <!-- live -->
+  <rect x="704" y="96" width="226" height="316" rx="20" fill="#fff" stroke="#7A1230" stroke-width="2"/>
+  <text x="817" y="124" font-size="15" font-weight="700" fill="#7A1230" text-anchor="middle">YouCam API (live)</text>
+  <text x="817" y="142" font-size="10.5" fill="#6E5256" text-anchor="middle">yce-api-01.makeupar.com (India)</text>
+  <g font-size="11.5" fill="#2A1418">
+    <text x="722" y="170">AI Skin Analysis v2.1 · 14 u</text>
+    <text x="722" y="192">AI Skin Simulation · 4 u</text>
+    <text x="722" y="214">AI Makeup Virtual Try-On · 1 u</text>
+    <text x="722" y="236">AI Hair Color VTO · 1 u</text>
+    <text x="722" y="258">AI Earrings VTO · 1 u</text>
+    <text x="722" y="280">AI Necklace VTO · 1 u</text>
+    <text x="722" y="302">AI Beard Style Generator · 2 u</text>
+    <text x="722" y="330" fill="#6E5256">0 u: File, Unit (credit,</text>
+    <text x="722" y="348" fill="#6E5256">feature-cost), templates,</text>
+    <text x="722" y="366" fill="#6E5256">Task Delete, JS Camera Kit</text>
+    <text x="722" y="394" font-size="10.5" fill="#6E5256">u = documented units per call</text>
+  </g>
+
+  <!-- mock -->
+  <rect x="704" y="430" width="226" height="166" rx="20" fill="#fff" stroke="#B07A10" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="817" y="458" font-size="15" font-weight="700" fill="#7a4b00" text-anchor="middle">Mock transport (demo)</text>
+  <g font-size="11.5" fill="#2A1418">
+    <text x="722" y="484">same endpoints + JSON shapes</text>
+    <text x="722" y="504">as the docs (fixtures/docs)</text>
+    <text x="722" y="524">validates SD/HD mix, pattern</text>
+    <text x="722" y="544">labels, templates, sizes</text>
+    <text x="722" y="568" fill="#6E5256">fixture images rendered locally,</text>
+    <text x="722" y="584" fill="#6E5256">labelled "Demo data" in the UI</text>
+  </g>
+  <text x="480" y="624" font-size="11.5" fill="#6E5256" text-anchor="middle">scripts/live_smoke.py: verify every endpoint (~19 units) · record real fixtures · pre-warm the sample models (~89 units)</text>
+</svg>

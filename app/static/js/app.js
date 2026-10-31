@@ -160,13 +160,13 @@ ROUTES[""] = {
       <div class="roles">${ROLES.map((r) => `<button class="role ${state.role === r ? "on" : ""}" data-act="role" data-role="${r}">
         <span class="em">${I[r]}</span>${T("role_" + r)}</button>`).join("")}</div>
       <button class="btn primary block" data-act="start-selfie">${T("start_selfie")}</button>
-      <div class="journey">${[["j_scan", "AI Skin Analysis"], ["j_plan", "D-60 → D-day"], ["j_try", "Makeup · Hair · Jewellery"], ["j_shop", "1 cart"]]
-        .map(([k, sub], i) => `<div class="jstep"><span class="n">${i + 1}</span><b>${T(k)}</b><span class="tiny">${esc(sub)}</span></div>`).join("")}</div>
+      <div class="journey">${["j_scan", "j_plan", "j_try", "j_shop"]
+        .map((k, i) => `<div class="jstep"><span class="n">${i + 1}</span><b>${T(k)}</b><span class="tiny">${T(k + "_sub")}</span></div>`).join("")}</div>
       <div class="section-title"><h2>${T("samples_title")}</h2><span class="pill">0 units</span></div>
       <div class="personas">${personas.map((p) => `<button class="persona" data-act="persona" data-id="${p.id}">
         <img src="${p.image}" alt="${esc(p.name)}" loading="lazy"><div class="grow"><b>${esc(p.name)}</b>
         <div class="small muted">${esc(L(p.blurb))}</div><div class="tiny">Photo: ${esc(p.credit)}</div></div>
-        <span class="chip">${T(p.role)}</span></button>`).join("")}</div>
+        <span class="chev" aria-hidden="true">›</span></button>`).join("")}</div>
       <p class="tiny mt8">${T("samples_note")}</p>
       <div class="apis">${CFG ? Object.values(CFG.apis).map((a) => `<span>${esc(a.title)}</span>`).join("") : ""}</div>
     </div></div>`;
@@ -221,7 +221,7 @@ ROUTES.capture = {
         <div class="tip"><div class="ic">${I.glasses}</div>${T("tip_glasses")}</div></div>
       <label class="consent"><input type="checkbox" id="consent" ${state.consent ? "checked" : ""}><span>${T("consent")}</span></label>
       <div id="capture-body" class="mt16">
-        <button class="bigopt" data-act="camkit"><span class="ic">${I.camera}</span><span><b>${T("camera_kit")}</b><span class="small muted">${T("camera_kit_sub")}</span></span></button>
+        ${CFG.camera_kit === false ? "" : `<button class="bigopt" data-act="camkit"><span class="ic">${I.camera}</span><span><b>${T("camera_kit")}</b><span class="small muted">${T("camera_kit_sub")}</span></span></button>`}
         <button class="bigopt" data-act="pick"><span class="ic">${I.upload}</span><span><b>${T("upload")}</b><span class="small muted">${T("upload_sub")}</span></span></button>
         <input type="file" id="file" accept="image/jpeg,image/png" class="hidden">
         <p class="center mt16"><a href="#/" class="small">${T("or_sample")}</a></p>
@@ -303,7 +303,8 @@ async function usePhoto() {
 function openCameraKit() {
   if (needConsent()) return;
   const start = () => {
-    window.YMK.init({ faceDetectionMode: "skincare", imageFormat: "base64", language: state.lang === "hi" ? "enu" : "enu" });
+    // "skincare" mode = close-up capture tuned for AI Skin Analysis (the kit has no Hindi UI, so English)
+    window.YMK.init({ faceDetectionMode: "skincare", imageFormat: "base64", language: "enu" });
     window.YMK.openCameraKit();
   };
   if (window.YMK && window.YMK.init) { start(); return; }
@@ -316,12 +317,12 @@ function openCameraKit() {
       try { window.YMK.close(); } catch { /* ignore */ }
       showCropper();
     });
-    window.YMK.addEventListener("cameraFailed", () => { toast(T("upload_sub"), true); try { window.YMK.close(); } catch { } });
+    window.YMK.addEventListener("cameraFailed", () => { toast(T("camera_failed"), true); try { window.YMK.close(); } catch { /* closed */ } });
     start();
   };
   const s = document.createElement("script");
   s.src = "https://plugins-media.makeupar.com/v2.5-camera-kit/sdk.js";
-  s.onerror = () => toast("Camera Kit could not load. Please upload a photo instead.", true);
+  s.onerror = () => toast(T("camera_failed"), true);
   document.body.appendChild(s);
 }
 
@@ -397,6 +398,8 @@ ROUTES.report = {
       <div class="card">${best.map(concernRow).join("")}</div>
       <details class="card mt12"><summary><b>${T("all_concerns")}</b></summary><div class="mt8">${s.concerns.map(concernRow).join("")}</div></details>
       <button class="btn primary block mt16" data-act="nav" data-to="plan">${T("see_plan")}</button>
+      <div class="row mt12" style="justify-content:center;gap:18px"><a class="small" href="#/setup">${T("change_details")}</a>
+        <a class="small" href="#/" data-act="new-scan">${T("new_scan")}</a></div>
       <p class="tiny center mt12">${esc(L(state.plan && state.plan.disclaimer))}</p></div>`;
   },
   mount() { maskOn = null; bindCompare(); },
@@ -634,6 +637,7 @@ function productRow(p, src) {
 async function tryOn(kind, id) {
   if (busy) return;
   busy = true;
+  window.scrollTo({ top: 0, behavior: "smooth" });   // the result appears in the viewer at the top
   drawLooks(T("rendering"));
   try {
     let res, title = "", extra = {};
@@ -679,7 +683,7 @@ ROUTES.shop = {
         : `<div class="empty">${T("empty_cart")}<div class="mt12"><button class="btn ghost sm" data-act="shop-routine">${T("shop_routine")}</button></div></div>`}
       ${items.length ? `<div class="totals"><div class="card"><div class="row between"><span class="muted">${T("total")}</span><b style="font-size:22px">${fmtINR(total)}</b></div>
         ${cap && routineTotal ? `<div class="tiny mt8">${T("sec_routine")}: ${fmtINR(routineTotal)} / ${fmtINR(cap)} ${routineTotal <= cap ? "✓" : ""}</div>` : ""}
-        <div class="row mt12"><button class="btn ghost sm grow" data-act="share">${T("share")}</button>
+        <div class="row mt12"><button class="btn ghost sm grow" data-act="share">↗ ${T("share")}</button>
         <button class="btn primary sm grow" data-act="checkout">${T("checkout")}</button></div></div></div>` : ""}</div>`;
   },
 };
@@ -849,6 +853,7 @@ document.addEventListener("click", async (e) => {
     el.disabled = false;
   }
   else if (a === "rescan") rescan();
+  else if (a === "new-scan") { Object.assign(state, { scanRes: null, plan: null, sim: null, tryon: {} }); save(); }
   else if (a === "show-request") showRequest(el.dataset.key);
   else if (a === "delete-data") {
     try {

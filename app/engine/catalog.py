@@ -201,7 +201,7 @@ MAKEUP = [
 FOUNDATIONS = [
     P(f"found_{i}", f"Long-wear Foundation · {name}", "Face", "base", 799, "30 ml", "balanced",
       art={"shape": "bottle", "color": hexc},
-      vto={"category": "foundation", "palettes": [{"color": hexc, "colorIntensity": 45, "glowIntensity": 40,
+      vto={"category": "foundation", "palettes": [{"color": hexc, "colorIntensity": 30, "glowIntensity": 40,
                                                    "coverageIntensity": 50}]})
     for i, (name, hexc) in enumerate(FOUNDATION_SHADES)
 ]

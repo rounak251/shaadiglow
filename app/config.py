@@ -32,6 +32,7 @@ class Settings:
     reserve_units: int = 60
     client_daily_units: int = 80
     allow_live_uploads: bool = True
+    camera_kit: bool = True
     poll_interval: float = 1.5
     mock_latency: float = 0.5
     max_upload_mb: int = 8
@@ -42,7 +43,7 @@ class Settings:
 
     def public(self) -> dict:
         return {"mode": self.mode, "region": self.region, "api_host": self.base_url.split("//")[-1],
-                "allow_live_uploads": self.allow_live_uploads}
+                "allow_live_uploads": self.allow_live_uploads, "camera_kit": self.camera_kit}
 
 
 def load_settings(env: dict | None = None) -> Settings:
@@ -70,4 +71,5 @@ def load_settings(env: dict | None = None) -> Settings:
     except ValueError:
         pass
     s.allow_live_uploads = str(g("SG_ALLOW_LIVE_UPLOADS", "true")).lower() in ("1", "true", "yes", "on")
+    s.camera_kit = str(g("SG_CAMERA_KIT", "true")).lower() in ("1", "true", "yes", "on")
     return s
